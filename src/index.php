@@ -38,12 +38,15 @@ if ( isset($_REQUEST) )
 
 	if( isset($clueid) )
 	{
-		$sqlSelect = "SELECT clue_text FROM Entries WHERE id = '$clueid';";
+		echo "<P>Clue: clueid is set :)</P>";
+		$sqlSelect = "SELECT clue_text FROM Entries WHERE id = '" . $clueid . "';";
 
                 if( $result = mysqli_query($conn, $sqlSelect) )
 		{
+			echo "<P>Query successful</P>";
 			if ($row = mysqli_fetch_assoc($result)) {
-			        echo "Clue: " . $row['clue_text'];
+				echo "<P>Fetch successful</P>";
+			        echo "<P>Clue: " . $row['clue_text'] . "<P>";
 		        } else {
                           echo "No record found for ID: " . $id;
                         }
