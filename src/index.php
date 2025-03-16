@@ -19,13 +19,13 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-echo "<P>Connected successfully</P>";
+//echo "<P>Connected successfully</P>";
 
 $sqlCreateTableIfNotExists = "create table if not exists Entries(id VARCHAR(255) PRIMARY KEY, cluetext VARCHAR(1000) NOT NULL);";
 $createTable=mysqli_query($conn, $sqlCreateTableIfNotExists);
 if( $createTable )
 {
-	echo "<P>Created Table</P>";
+	//echo "<P>Created Table</P>";
 }
 else
 {
@@ -38,15 +38,15 @@ if ( isset($_REQUEST) )
 
 	if( isset($clueid) )
 	{
-		echo "<P>Clue: clueid is set :)<BR> " . $clueid . "</P>";
+		//echo "<P>Clue: clueid is set :)<BR> " . $clueid . "</P>";
 		$sqlSelect = "SELECT cluetext FROM Entries WHERE id = '" . $clueid . "';";
 
                 if( $result = mysqli_query($conn, $sqlSelect) )
 		{
-			echo "<P>Query successful</P>";
+			//echo "<P>Query successful</P>";
 			if ($row = mysqli_fetch_assoc($result)) {
-				echo "<P>Fetch successful</P>";
-			        echo "<P>Clue: " . $row['clue_text'] . "<P>";
+				//echo "<P>Fetch successful</P>";
+			        echo "<P>Clue: " . $row['cluetext'] . "<P>";
 		        } else {
                           echo "No record found for ID: " . $id;
                         }
