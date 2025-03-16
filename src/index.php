@@ -51,6 +51,9 @@ if ( isset($_REQUEST) )
 		}
 
 	}
+	{
+           echo "Scavenger hunt.  If you have a clue use the site like scavengerhunt.place.com/?clue_id=Whatever  Have fun!";
+        }
 }
 else
 {
@@ -67,7 +70,7 @@ $conn->close();
 </p>
 
             <input type="submit" value="Submit">
-        </form>
+</form>
 
 </BODY>
 </HTML>
