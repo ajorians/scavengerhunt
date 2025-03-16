@@ -38,7 +38,7 @@ if ( isset($_REQUEST) )
 
 	if( isset($clueid) )
 	{
-		echo "<P>Clue: clueid is set :)</P>";
+		echo "<P>Clue: clueid is set :)<BR> " . $clueid . "</P>";
 		$sqlSelect = "SELECT clue_text FROM Entries WHERE id = '" . $clueid . "';";
 
                 if( $result = mysqli_query($conn, $sqlSelect) )
