@@ -1,12 +1,3 @@
-<!---
-create table Entries(
-   order_id INT NOT NULL AUTO_INCREMENT,
-   person_name VARCHAR(100) NOT NULL,
-   birthday_date DATE,
-   PRIMARY KEY ( order_id )
-);
---->
-
 <HTML>
 
 <TITLE>Scavenger Hunt</TITLE>
@@ -28,10 +19,18 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-//echo "<P>Connected successfully</P>";
+echo "<P>Connected successfully</P>";
 
-$sqlCreateTableIfNotExists = "create table if not exists Entries(id VARCHAR(255) PRIMARY, clue_text VARCHAR(1000) NOT NULL);";
-mysqli_query($conn, $sqlCreateTableIfNotExists);
+$sqlCreateTableIfNotExists = "create table if not exists Entries(id VARCHAR(255) PRIMARY KEY, clue_text VARCHAR(1000) NOT NULL);";
+$createTable=mysqli_query($conn, $sqlCreateTableIfNotExists);
+if( $createTable )
+{
+	echo "<P>Created Table</P>";
+}
+else
+{
+	echo "<P>No table created</P>";
+}
 
 if ( isset($_REQUEST) )
 {
