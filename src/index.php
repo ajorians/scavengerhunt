@@ -21,7 +21,7 @@ if ($conn->connect_error) {
 }
 echo "<P>Connected successfully</P>";
 
-$sqlCreateTableIfNotExists = "create table if not exists Entries(id VARCHAR(255) PRIMARY KEY, clue_text VARCHAR(1000) NOT NULL);";
+$sqlCreateTableIfNotExists = "create table if not exists Entries(id VARCHAR(255) PRIMARY KEY, cluetext VARCHAR(1000) NOT NULL);";
 $createTable=mysqli_query($conn, $sqlCreateTableIfNotExists);
 if( $createTable )
 {
@@ -39,7 +39,7 @@ if ( isset($_REQUEST) )
 	if( isset($clueid) )
 	{
 		echo "<P>Clue: clueid is set :)<BR> " . $clueid . "</P>";
-		$sqlSelect = "SELECT clue_text FROM Entries WHERE id = '" . $clueid . "';";
+		$sqlSelect = "SELECT cluetext FROM Entries WHERE id = '" . $clueid . "';";
 
                 if( $result = mysqli_query($conn, $sqlSelect) )
 		{
