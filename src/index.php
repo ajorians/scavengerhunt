@@ -48,8 +48,13 @@ if ( isset($_REQUEST) )
                           echo "No record found for ID: " . $id;
                         }
 		}
+		else
+		{
+			echo "Issues with query";
+		}
 
 	}
+	else
 	{
            echo "Scavenger hunt.  If you have a clue use the site like scavengerhunt.place.com/?clue_id=Whatever  Have fun!";
         }
