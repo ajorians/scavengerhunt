@@ -1,6 +1,7 @@
 name: Build Image Cross Platform
 
 on:
+  workflow_dispatch:
   push:
     branches: [ master ]
   pull_request:
