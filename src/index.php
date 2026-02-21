@@ -10,7 +10,7 @@
 $servername = "localhost";
 $username = "scavengeruser";
 $password = "scavengerpassword";
-$dbname = "scavengerhunt";
+$dbname = "scavengerhuntdb";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
